@@ -1,4 +1,3 @@
-
 import { DisasterType } from '@/components/DisasterMap';
 
 // Mock API functions for demo purposes
@@ -311,7 +310,7 @@ export const fetchAQIData = async (location: string) => {
         protection: [
           'Usually no special precautions needed for most people',
           'Sensitive individuals should keep any necessary medication handy',
-          'Monitor your body's response during outdoor activities',
+          "Monitor your body's response during outdoor activities",
         ],
       },
       weather: {
@@ -372,7 +371,7 @@ export const fetchAQIData = async (location: string) => {
         protection: [
           'Usually no special precautions needed for most people',
           'Sensitive individuals should keep any necessary medication handy',
-          'Monitor your body's response during outdoor activities',
+          "Monitor your body's response during outdoor activities",
         ],
       },
       weather: {
