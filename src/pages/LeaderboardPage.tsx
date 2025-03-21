@@ -1,8 +1,8 @@
 
 import { motion } from 'framer-motion';
-import Hero from '@/components/Hero';
+import Leaderboard from '@/components/Leaderboard';
 
-const Index = () => {
+const LeaderboardPage = () => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -10,9 +10,9 @@ const Index = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <Hero />
+      <Leaderboard />
     </motion.div>
   );
 };
 
-export default Index;
+export default LeaderboardPage;
