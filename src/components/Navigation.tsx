@@ -70,9 +70,9 @@ const Navigation = () => {
             to="/" 
             className="flex items-center space-x-2 text-xl font-bold tracking-tight"
           >
-            <AlertCircle className="w-7 h-7 text-primary" />
+            {/* <AlertCircle className="w-7 h-7 text-primary" /> */}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-500">
-              EcoDisasterScan
+              EcoSight
             </span>
           </Link>
           
