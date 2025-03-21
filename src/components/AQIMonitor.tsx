@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useQuery } from '@tanstack/react-query';
@@ -7,11 +6,12 @@ import {
   Wind, 
   Loader2, 
   AlertTriangle,
-  Lungs,
+  Heart,
   Activity,
   Droplets,
   CloudRain,
-  Thermometer
+  Thermometer,
+  Eye
 } from 'lucide-react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line } from 'recharts';
 import { fetchAQIData } from '@/utils/api';
@@ -75,7 +75,6 @@ const AQIMonitor = () => {
     }
   };
   
-  // Mock AQI data for preview
   const mockAQIData: AQIData = {
     location: 'Delhi, India',
     current: {
@@ -104,9 +103,9 @@ const AQIMonitor = () => {
       generalPopulation: 'May experience health effects; members of sensitive groups may experience more serious health effects.',
       sensitiveGroups: 'People with respiratory or heart disease, the elderly and children should limit prolonged outdoor exertion.',
       healthRisks: {
-        respiratory: 'high',
-        cardiovascular: 'moderate',
-        eyeIrritation: 'high',
+        respiratory: 'high' as 'low' | 'moderate' | 'high' | 'very high',
+        cardiovascular: 'moderate' as 'low' | 'moderate' | 'high' | 'very high',
+        eyeIrritation: 'high' as 'low' | 'moderate' | 'high' | 'very high',
       },
     },
     recommendations: {
@@ -393,10 +392,10 @@ const AQIMonitor = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   <div className="flex flex-col items-center">
                     <div className="mb-2">
-                      <Lungs className="w-7 h-7 text-muted-foreground mb-1" />
+                      <Heart className="w-7 h-7 text-muted-foreground mb-1" />
                       <div className="text-xs text-center font-medium">Respiratory</div>
                     </div>
-                    <span className={`text-xs px-2 py-1 rounded-full ${getRiskColor(data.health.healthRisks.respiratory)}`}>
+                    <span className={`text-xs px-2 py-1 rounded-full ${getRiskColor(data.health.healthRisks.respiratory as 'low' | 'moderate' | 'high' | 'very high')}`}>
                       {data.health.healthRisks.respiratory}
                     </span>
                   </div>
@@ -405,19 +404,16 @@ const AQIMonitor = () => {
                       <Activity className="w-7 h-7 text-muted-foreground mb-1" />
                       <div className="text-xs text-center font-medium">Cardiovascular</div>
                     </div>
-                    <span className={`text-xs px-2 py-1 rounded-full ${getRiskColor(data.health.healthRisks.cardiovascular)}`}>
+                    <span className={`text-xs px-2 py-1 rounded-full ${getRiskColor(data.health.healthRisks.cardiovascular as 'low' | 'moderate' | 'high' | 'very high')}`}>
                       {data.health.healthRisks.cardiovascular}
                     </span>
                   </div>
                   <div className="flex flex-col items-center">
                     <div className="mb-2">
-                      <svg className="w-7 h-7 text-muted-foreground mb-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <circle cx="12" cy="12" r="10"/>
-                        <circle cx="12" cy="12" r="4"/>
-                      </svg>
+                      <Eye className="w-7 h-7 text-muted-foreground mb-1" />
                       <div className="text-xs text-center font-medium">Eye Irritation</div>
                     </div>
-                    <span className={`text-xs px-2 py-1 rounded-full ${getRiskColor(data.health.healthRisks.eyeIrritation)}`}>
+                    <span className={`text-xs px-2 py-1 rounded-full ${getRiskColor(data.health.healthRisks.eyeIrritation as 'low' | 'moderate' | 'high' | 'very high')}`}>
                       {data.health.healthRisks.eyeIrritation}
                     </span>
                   </div>
