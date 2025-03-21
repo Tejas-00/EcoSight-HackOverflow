@@ -23,7 +23,7 @@ const Layout = ({ children }: LayoutProps) => {
   const isHomepage = location.pathname === "/";
   
   return (
-    <div className={`min-h-screen w-full transition-all duration-500 ${isLoaded ? "opacity-100" : "opacity-0"}`}>
+    <div className={`min-h-screen w-full transition-all duration-500 ${isLoaded ? "opacity-100" : "opacity-0"} bg-background text-foreground`}>
       <Navigation />
       <main className={`w-full ${!isHomepage ? 'pt-16 h-[calc(100vh-64px)]' : 'h-screen'}`}>
         {children}

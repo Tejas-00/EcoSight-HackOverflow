@@ -10,13 +10,18 @@ import {
   Menu, 
   X,
   AlertTriangle,
-  AlertCircle
+  AlertCircle,
+  Moon,
+  Sun
 } from "lucide-react";
+import { useTheme } from "./ThemeProvider";
+import { Button } from "./ui/button";
 
 const Navigation = () => {
   const location = useLocation();
   const [scrollPosition, setScrollPosition] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
   
   const isHomepage = location.pathname === "/";
   
@@ -94,16 +99,53 @@ const Navigation = () => {
                 </Link>
               </motion.div>
             ))}
+            
+            {/* Theme Toggle Button */}
+            <motion.div
+              custom={navItems.length}
+              initial="hidden"
+              animate="visible"
+              variants={variants}
+            >
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={toggleTheme}
+                className="ml-2"
+                aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+              >
+                {theme === 'light' ? (
+                  <Moon className="h-5 w-5" />
+                ) : (
+                  <Sun className="h-5 w-5" />
+                )}
+              </Button>
+            </motion.div>
           </nav>
           
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden flex items-center"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* Mobile Menu and Theme Toggle */}
+          <div className="md:hidden flex items-center space-x-1">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
+              aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+            >
+              {theme === 'light' ? (
+                <Moon className="h-5 w-5" />
+              ) : (
+                <Sun className="h-5 w-5" />
+              )}
+            </Button>
+            
+            <button
+              className="flex items-center"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
       </div>
       
