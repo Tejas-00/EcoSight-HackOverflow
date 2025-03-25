@@ -1,69 +1,64 @@
-# Welcome to your Lovable project
+# EcoSight
 
-## Project info
+EcoSight is an advanced environmental monitoring platform that integrates hyperspectral imaging, satellite imagery, and climate data to detect environmental anomalies and predict climate-driven disasters in real time. The platform provides crucial insights for disaster management, air quality forecasting, and urban planning.
 
-**URL**: https://lovable.dev/projects/2b12e973-bc2f-445d-b9ab-74b6daef3947
+## Features
 
-## How can I edit this code?
+### 1. Real-time Disaster Tracking
+- Uses NASA EONET API to track ongoing disasters globally.
+- Displays reported disasters with real-time updates.
 
-There are several ways of editing your application.
+### 2. AI-Based Disaster Prediction
+- Implements AI models to forecast potential disasters such as wildfires and floods.
+- Integrates Google Earth Engine and NASA FIRMS API for wildfire prediction.
 
-**Use Lovable**
+### 3. AQI & Health Prediction
+- Fetches AQI data for different regions.
+- Provides health risk analysis based on air quality levels.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/2b12e973-bc2f-445d-b9ab-74b6daef3947) and start prompting.
+### 4. Ranking Indian Cities by AQI
+- Analyzes AQI data to rank cities based on air pollution levels.
+- Helps identify areas with critical pollution levels.
 
-Changes made via Lovable will be committed automatically to this repo.
+## Tech Stack
+- **Frontend:** React.js, typescript
+- **Backend:** firebase
+- **AI & Data Processing:** Python, TensorFlow, Google Earth Engine
+- **APIs & Services:** NASA EONET, NASA FIRMS, OpenWeather API
 
-**Use your preferred IDE**
+## Installation & Setup
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/Tejas-00/EcoSight-HackOverflow.git
+   ```
+2. Navigate to the project directory:
+   ```sh
+   cd EcoSight-HackOverflow
+   ```
+3. Install dependencies:
+   ```sh
+   npm install
+   ```
+4. Start the development server:
+   ```sh
+   npm start
+   ```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Contributing
+We welcome contributions! To contribute:
+1. Fork the repository.
+2. Create a new branch.
+3. Make your changes and commit them.
+4. Push to your fork and submit a pull request.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## License
+This project is licensed under the MIT License.
 
-Follow these steps:
+## Contact
+For any queries, feel free to reach out:
+- **GitHub:** [Tejas-00](https://github.com/Tejas-00)
+- **Email:** [tejassonawanework@gmail.com]
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
+Developed by Team TechNova 🚀
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/2b12e973-bc2f-445d-b9ab-74b6daef3947) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
